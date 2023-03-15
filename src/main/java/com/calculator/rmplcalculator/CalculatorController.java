@@ -24,7 +24,7 @@ public class CalculatorController {
         if (num1 == null || num2 == null) {
             return "Число не передано";
         } else {
-            return calculatorService.plus(num1, num2);
+            return num1 + " + " + num2 + " = " + calculatorService.plus(num1, num2);
         }
     }
 
@@ -33,7 +33,7 @@ public class CalculatorController {
         if (num1 == null || num2 == null) {
             return "Число не передано";
         } else {
-            return calculatorService.minus(num1, num2);
+            return num1 + " - " + num2 + " = " + calculatorService.minus(num1, num2);
         }
     }
 
@@ -42,7 +42,11 @@ public class CalculatorController {
         if (num1 == null || num2 == null) {
             return "Число не передано";
         } else {
-            return calculatorService.divide(num1, num2);
+            if (num2 == 0) {
+                return num1 + " / " + num2 + " - " + "Деление невозможно";
+            } else {
+                return num1 + " / " + num2 + " = " + calculatorService.divide(num1, num2);
+            }
         }
     }
 
@@ -51,7 +55,7 @@ public class CalculatorController {
         if (num1 == null || num2 == null) {
             return "Число не передано";
         } else {
-            return calculatorService.multiply(num1, num2);
+            return num1 + " * " + num2 + " = " + calculatorService.multiply(num1, num2);
         }
     }
 }
